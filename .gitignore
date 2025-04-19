@@ -14,9 +14,6 @@ myenv/
 # Jupyter Notebook checkpoints
 .ipynb_checkpoints
 
-# PyTorch model files (optional)
-*.pth
-*.pt
 
 # NLTK data (optional - can be re-downloaded)
 nltk_data/
