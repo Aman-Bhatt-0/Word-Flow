@@ -4,7 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Next Word Predictor</title>
-    <link rel="stylesheet" href="/static/style.css">
+    
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(to right, #4b6cb7, #182848);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        h1, h2 {
+            margin: 0 0 1rem;
+        }
+
+        main {
+            max-width: 900px;
+            margin: auto;
+            padding: 2rem;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1rem;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            resize: vertical;
+        }
+
+        .prediction-box {
+            margin-top: 10px;
+            background-color: #e8f0fe;
+            padding: 6px 12px;
+            border-radius: 8px;
+            color: #1a237e;
+            font-weight: bold;
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #e0e0e0;
+            font-size: 0.9rem;
+            color: #555;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -27,7 +88,7 @@
                 <li><strong>PyTorch:</strong> Used to build and train the deep learning model with LSTM layers.</li>
                 <li><strong>LSTM (Long Short-Term Memory):</strong> A type of Recurrent Neural Network (RNN) ideal for sequence prediction tasks like next-word generation.</li>
                 <li><strong>Flask:</strong> A lightweight Python web framework used to deploy the model and serve predictions through a web interface.</li>
-                <li><strong>NLTK:</strong> Used for tokenization and text preprocessing.</li>
+                <li><strong>Custom Tokenizer:</strong> A lightweight regex-based tokenizer to remove NLTK dependency and reduce deployment size.</li>
             </ul>
         </section>
 
@@ -35,9 +96,9 @@
             <h2>🚀 Features</h2>
             <ul>
                 <li>User-friendly interface to input sentences</li>
-                <li>Predicts the most likely next word</li>
+                <li>Predicts the most likely next words</li>
                 <li>Efficient backend powered by PyTorch LSTM</li>
-                <li>Deployable on platforms like Render or Heroku</li>
+                <li>Optimized for deployment on platforms like Render or Heroku</li>
             </ul>
         </section>
 

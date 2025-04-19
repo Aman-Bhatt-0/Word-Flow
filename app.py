@@ -3,12 +3,8 @@ from flask_cors import CORS
 import torch
 import torch.nn as nn
 import pickle
-import nltk
 import traceback
-from predictor import get_top_k_predictions
-
-# Download NLTK tokenizer
-nltk.download('punkt')
+from predictor import get_top_k_predictions  # Import your prediction function
 
 # Initialize Flask app
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -58,24 +54,25 @@ def home():
 @app.route('/predict', methods=['GET', 'POST'])
 def predict():
     if request.method == 'GET':
-        print(" GET request received at /predict.")
+        print("GET request received at /predict.")
         return jsonify({'message': 'Send a POST request with text data'})
 
     try:
         data = request.get_json()
         text = data.get('text', '').strip()
-        print(f" Received text: '{text}'")
+        print(f"Received text: '{text}'")
 
         if not text:
-            print(" Empty input received.")
+            print("Empty input received.")
             return jsonify({'predictions': []})
 
+        # Use the separate predictor module to get top predictions
         top_words = get_top_k_predictions(model, vocab, text, top_k=5)
-        print(f" Top predictions: {top_words}")
+        print(f"Top predictions: {top_words}")
         return jsonify({'predictions': top_words})
 
     except Exception as e:
-        print(" Prediction error:")
+        print("Prediction error:")
         traceback.print_exc()
         return jsonify({'error': 'Prediction failed.'}), 500
 
@@ -83,5 +80,5 @@ def predict():
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
-    print(f" Starting server on port {port}")
+    print(f"Starting server on port {port}")
     app.run(host='0.0.0.0', port=port)

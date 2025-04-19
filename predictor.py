@@ -1,12 +1,18 @@
 import torch
-from nltk.tokenize import word_tokenize
+import re
+
+# Simple tokenizer (whitespace + basic punctuation split)
+def simple_tokenize(text):
+    # Remove unnecessary characters and split on whitespace
+    tokens = re.findall(r"\b\w+\b", text.lower())
+    return tokens
 
 def text_to_indices(sentence, vocab, max_len=60):
     unk_index = vocab.get('<unk>', 0)
-    tokens = word_tokenize(sentence.lower())
+    tokens = simple_tokenize(sentence)
     indices = [vocab.get(token, unk_index) for token in tokens]
-    indices = indices[-max_len:]  
-    padded = [0] * (max_len - len(indices)) + indices 
+    indices = indices[-max_len:]  # Trim to max_len
+    padded = [0] * (max_len - len(indices)) + indices  # Pad from the front
     return padded
 
 def get_top_k_predictions(model, vocab, text, max_len=60, top_k=3):
