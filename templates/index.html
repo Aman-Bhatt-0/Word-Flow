@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Word Predictor</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1>Next Word Prediction</h1>
+        <p>Predict the next word in a sentence using Deep Learning</p>
+    </header>
+    
+    <main>
+        <section class="card">
+            <h2>🔍 About the Project</h2>
+            <p>
+                This project demonstrates a deep learning-based approach to predict the next word in a sentence. 
+                It's designed using an LSTM model trained on natural language data to learn the context of words and generate relevant predictions.
+            </p>
+        </section>
+
+        <section class="card">
+            <h2>🛠️ Tools & Technologies</h2>
+            <ul>
+                <li><strong>PyTorch:</strong> Used to build and train the deep learning model with LSTM layers.</li>
+                <li><strong>LSTM (Long Short-Term Memory):</strong> A type of Recurrent Neural Network (RNN) ideal for sequence prediction tasks like next-word generation.</li>
+                <li><strong>Flask:</strong> A lightweight Python web framework used to deploy the model and serve predictions through a web interface.</li>
+                <li><strong>NLTK:</strong> Used for tokenization and text preprocessing.</li>
+            </ul>
+        </section>
+
+        <section class="card">
+            <h2>🚀 Features</h2>
+            <ul>
+                <li>User-friendly interface to input sentences</li>
+                <li>Predicts the most likely next word</li>
+                <li>Efficient backend powered by PyTorch LSTM</li>
+                <li>Deployable on platforms like Render or Heroku</li>
+            </ul>
+        </section>
+
+        <section class="card input-section">
+            <h2>💬 Try It Out</h2>
+            <textarea id="text-area" rows="4" cols="60" placeholder="Start typing here..."></textarea>
+            <div id="predictions" class="prediction-box"></div>
+        </section>
+    </main>
+
+    <footer>
+        Made using PyTorch and Flask | © 2025
+    </footer>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

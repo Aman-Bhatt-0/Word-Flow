@@ -1,0 +1,35 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Virtual environment
+env/
+venv/
+myenv/
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# PyTorch model files (optional)
+*.pth
+*.pt
+
+# NLTK data (optional - can be re-downloaded)
+nltk_data/
+
+# Mac/Linux system files
+.DS_Store
+
+# VSCode/IDE configs (optional)
+.vscode/
+.idea/
+
+# Logs (optional)
+*.log
+
+# Static cache (optional)
+static/*.cache
