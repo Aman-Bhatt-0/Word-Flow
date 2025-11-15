@@ -5,7 +5,7 @@ def simple_tokenize(text):
     tokens = re.findall(r"\b\w+\b", text.lower())
     return tokens
 
-def text_to_indices(sentence, tokenizer, max_len=60):
+def text_to_indices(sentence, tokenizer, max_len=20):
     tokens = simple_tokenize(sentence)
     seq = tokenizer.texts_to_sequences([' '.join(tokens)])[0]
 
