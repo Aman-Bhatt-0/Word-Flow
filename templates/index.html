@@ -85,10 +85,10 @@
         <section class="card">
             <h2>🛠️ Tools & Technologies</h2>
             <ul>
-                <li><strong>PyTorch:</strong> Used to build and train the deep learning model with LSTM layers.</li>
+                <li><strong>TensorFlow / Keras:</strong> Used to build, train, and export the LSTM-based next-word prediction model in a portable .h5 format.</li>
                 <li><strong>LSTM (Long Short-Term Memory):</strong> A type of Recurrent Neural Network (RNN) ideal for sequence prediction tasks like next-word generation.</li>
                 <li><strong>Flask:</strong> A lightweight Python web framework used to deploy the model and serve predictions through a web interface.</li>
-                <li><strong>Custom Tokenizer:</strong> A lightweight regex-based tokenizer to remove NLTK dependency and reduce deployment size.</li>
+                <li><strong>Embedding Layer:</strong> Used to convert integer-encoded words into dense vector representations before feeding them into the LSTM. The embedding layer learns semantic relationships between words during training, allowing the model to understand contextual similarity.</li>
             </ul>
         </section>
 
@@ -97,8 +97,7 @@
             <ul>
                 <li>User-friendly interface to input sentences</li>
                 <li>Predicts the most likely next words</li>
-                <li>Efficient backend powered by PyTorch LSTM</li>
-                <li>Optimized for deployment on platforms like Render or Heroku</li>
+                <li>Efficient backend powered by TensorFlow LSTM</li>
             </ul>
         </section>
 
